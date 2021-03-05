@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:sample_messanger/model.dart';
 
 class ConversationWidget extends StatefulWidget {
-  final Conversation conversation;
-  final List<Message> messages;
+  final Conversation? conversation;
+  final List<Message>? messages;
   final void Function(String message) onMessageSend;
 
   const ConversationWidget(
     this.conversation,
     this.messages,
     this.onMessageSend, {
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -48,7 +48,7 @@ class _State extends State<ConversationWidget> {
 
   Widget buildConversation() => Column(children: [
         Expanded(
-            child: widget.messages.isNotEmpty
+            child: widget.messages!.isNotEmpty
                 ? buildMessageList()
                 : buildEmptyArea()),
         buildMessageForm(),
@@ -71,18 +71,18 @@ class _State extends State<ConversationWidget> {
   Widget buildMessageList() => ListView.separated(
         reverse: true,
         padding: EdgeInsets.all(16.0),
-        itemCount: widget.messages.length,
+        itemCount: widget.messages!.length,
         separatorBuilder: (BuildContext context, int position) =>
             Container(height: 16.0),
         itemBuilder: (BuildContext context, int position) {
-          final message = widget.messages[position];
+          final message = widget.messages![position];
           final List<Widget> content = [];
           if (isMessageFromOtherUser(message)) {
             content.addAll([
               ClipOval(
                 clipBehavior: Clip.hardEdge,
                 child: Image.asset(
-                  "assets/images/${widget.conversation.avatar}",
+                  "assets/images/${widget.conversation!.avatar}",
                   width: 32,
                   height: 32,
                 ),

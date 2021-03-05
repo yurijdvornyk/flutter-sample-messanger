@@ -3,8 +3,11 @@ import 'package:sample_messanger/device_type_utils.dart';
 
 abstract class BasePageState<W extends StatefulWidget> extends State<W> {
   Widget buildPhoneState(BuildContext context) => Container();
+
   Widget buildTabletState(BuildContext context) => Container();
+
   Widget buildWebState(BuildContext context) => Container();
+
   Widget buildDesktopState(BuildContext context) => Container();
 
   @override

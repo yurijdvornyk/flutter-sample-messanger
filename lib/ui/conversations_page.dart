@@ -15,10 +15,10 @@ class ConversationsPage extends StatefulWidget {
 class _State extends BasePageState<ConversationsPage> {
   final apiProvider = ApiProvider.instance;
 
-  List<Conversation> conversations;
+  List<Conversation>? conversations;
 
-  Conversation selectedConversation;
-  List<Message> conversationMessages;
+  Conversation? selectedConversation;
+  List<Message>? conversationMessages;
 
   @override
   void initState() {
@@ -67,7 +67,7 @@ class _State extends BasePageState<ConversationsPage> {
                     conversationMessages,
                     (message) {
                       apiProvider.sendMessageAndRespond(
-                        selectedConversation,
+                        selectedConversation!,
                         message,
                         context,
                       );

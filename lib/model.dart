@@ -1,6 +1,6 @@
 class Message {
-  final String currentUser;
-  final String otherUser;
+  final String? currentUser;
+  final String? otherUser;
 
   Message({
     this.currentUser,
@@ -20,11 +20,11 @@ class Message {
 class Conversation {
   final String user;
   final String avatar;
-  final String lastMessage;
+  final String? lastMessage;
 
-  const Conversation({
+  const Conversation(
     this.user,
-    this.avatar,
+    this.avatar, {
     this.lastMessage,
   });
 

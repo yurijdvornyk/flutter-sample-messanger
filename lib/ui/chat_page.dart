@@ -16,7 +16,7 @@ class ChatPage extends StatefulWidget {
 class _State extends BasePageState<ChatPage> {
   final apiProvider = ApiProvider.instance;
 
-  List<Message> conversationMessages;
+  List<Message>? conversationMessages;
 
   @override
   void initState() {

@@ -31,7 +31,7 @@ class ApiProvider implements IApiProvider {
 
   ApiProvider._();
 
-  void Function(List<Conversation>) onConversationsUpdated;
+  void Function(List<Conversation>)? onConversationsUpdated;
 
   @override
   Future<List<Conversation>> loadConversations(BuildContext context) async {
@@ -44,16 +44,16 @@ class ApiProvider implements IApiProvider {
   }
 
   @override
-  void loadConversation(Conversation conversation) async {
+  void loadConversation(Conversation? conversation) async {
     await Future.delayed(Duration(milliseconds: 200));
-    if (_listeners[conversation] != null) {
-      _listeners[conversation](_content[conversation] ?? []);
+    if (_listeners[conversation!] != null) {
+      _listeners[conversation]!(_content[conversation] ?? []);
     }
   }
 
   @override
   void subscribe(
-    Conversation conversation,
+    Conversation? conversation,
     void Function(List<Message>) onConversationUpdated,
   ) {
     if (conversation != null) {
@@ -71,18 +71,18 @@ class ApiProvider implements IApiProvider {
   }
 
   @override
-  void unsubscribe(Conversation conversation) {
+  void unsubscribe(Conversation? conversation) {
     _listeners.removeWhere((key, value) => key == conversation);
   }
 
   void _postMessage(Conversation conversation, Message message) {
     if (_content.containsKey(conversation)) {
-      _content[conversation].insert(0, message);
+      _content[conversation]?.insert(0, message);
     } else {
       _content.putIfAbsent(conversation, () => [message]);
     }
     if (_listeners[conversation] != null) {
-      _listeners[conversation](_content[conversation]);
+      _listeners[conversation]?.call(_content[conversation] ?? []);
     }
   }
 
