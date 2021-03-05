@@ -1,0 +1,50 @@
+[
+    {
+        "user": "Lisa",
+        "avatar": "lisa.jpeg"
+    },
+    {
+        "user": "Ben",
+        "avatar": "ben.jpeg"
+    },
+    {
+        "user": "Olivia",
+        "avatar": "olivia.jpeg"
+    },
+    {
+        "user": "Liam",
+        "avatar": "liam.jpeg"
+    },
+    {
+        "user": "Jessica",
+        "avatar": "jessica.jpeg"
+    },
+    {
+        "user": "Benjamin",
+        "avatar": "benjamin.jpeg"
+    },
+    {
+        "user": "Sophia",
+        "avatar": "sophia.jpeg"
+    },
+    {
+        "user": "Oliver",
+        "avatar": "oliver.jpeg"
+    },
+    {
+        "user": "Amelia",
+        "avatar": "amelia.jpeg"
+    },
+    {
+        "user": "Camila",
+        "avatar": "camila.jpeg"
+    },
+    {
+        "user": "Lucas",
+        "avatar": "lucas.jpeg"
+    },
+    {
+        "user": "Natalie",
+        "avatar": "natalie.jpeg"
+    }
+]
