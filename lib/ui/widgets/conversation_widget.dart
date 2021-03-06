@@ -41,7 +41,7 @@ class _State extends State<ConversationWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(child: Container()),
-          Icon(Icons.message, size: 128.0),
+          Icon(Icons.message_rounded, size: 128.0),
           SizedBox(height: 16.0),
           Text("Select conversation"),
           Expanded(child: Container()),
@@ -160,7 +160,7 @@ class _State extends State<ConversationWidget> {
               ),
             ),
             IconButton(
-              icon: Icon(Icons.send),
+              icon: Icon(Icons.send_rounded),
               onPressed: sendMessage,
             )
           ],
