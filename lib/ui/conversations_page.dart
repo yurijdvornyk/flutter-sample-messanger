@@ -61,18 +61,19 @@ class _State extends BasePageState<ConversationsPage> {
                 ),
               ),
               Expanded(
-                  flex: 3,
-                  child: ConversationWidget(
-                    selectedConversation,
-                    conversationMessages,
-                    (message) {
-                      apiProvider.sendMessageAndRespond(
-                        selectedConversation!,
-                        message,
-                        context,
-                      );
-                    },
-                  ))
+                flex: 3,
+                child: ConversationWidget(
+                  selectedConversation,
+                  conversationMessages,
+                  (message) {
+                    apiProvider.sendMessageAndRespond(
+                      selectedConversation!,
+                      message,
+                      context,
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
@@ -104,6 +105,8 @@ class _State extends BasePageState<ConversationsPage> {
 
   void openConversationScreen(Conversation conversation) => Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ChatPage(conversation)),
+        MaterialPageRoute(
+          builder: (context) => ChatPage(conversation),
+        ),
       );
 }

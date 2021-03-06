@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       SchedulerBinding.instance?.window.platformBrightness;
 
   static const _PRIMARY_COLOR = const Color(0xff6a1b9a);
-  static const _ACCENT_COLOR = const Color(0xffff6f00);
+  static const _ACCENT_COLOR = const Color(0xffff8f00);
 
   @override
   Widget build(BuildContext context) => FutureBuilder(
