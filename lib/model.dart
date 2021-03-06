@@ -18,23 +18,27 @@ class Message {
 }
 
 class Conversation {
-  final String user;
+  final String name;
+  final String username;
   final String avatar;
   final String? lastMessage;
 
   const Conversation(
-    this.user,
+    this.name,
+    this.username,
     this.avatar, {
     this.lastMessage,
   });
 
   Conversation.fromJson(Map<String, dynamic> json)
-      : this.user = json["user"],
+      : this.name = json["name"],
+        this.username = json["username"],
         this.avatar = json["avatar"],
         this.lastMessage = json["lastMessage"];
 
   Map<String, dynamic> toJson() => {
-        "user": user,
+        "name": name,
+        "username": username,
         "avatar": avatar,
         "lastMessage": lastMessage,
       };

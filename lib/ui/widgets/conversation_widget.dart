@@ -26,7 +26,7 @@ class _State extends State<ConversationWidget> {
   @override
   Widget build(BuildContext context) => Column(children: [
         AppBar(
-          title: Text(widget.conversation?.user ?? ""),
+          title: Text(widget.conversation?.name ?? ""),
         ),
         Expanded(
             child: widget.conversation != null

@@ -39,7 +39,8 @@ class ConversationListWidget extends StatelessWidget {
                   ),
                   aspectRatio: 1),
             ),
-            title: Text(conversations![position].user),
+            title: Text(conversations![position].name),
+            subtitle: Text(conversations![position].username),
             onTap: () => onItemSelected(conversations![position]),
           ),
         );

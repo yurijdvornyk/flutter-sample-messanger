@@ -1,50 +1,62 @@
 [
     {
-        "user": "Lisa",
+        "name": "Lisa",
+        "username": "@lsimpson",
         "avatar": "lisa.jpeg"
     },
     {
-        "user": "Ben",
+        "name": "Ben",
+        "username": "@bobroin",
         "avatar": "ben.jpeg"
     },
     {
-        "user": "Olivia",
+        "name": "Olivia",
+        "username": "@oshore",
         "avatar": "olivia.jpeg"
     },
     {
-        "user": "Liam",
+        "name": "Liam",
+        "username": "@lhansen",
         "avatar": "liam.jpeg"
     },
     {
-        "user": "Jessica",
+        "name": "Jessica",
+        "username": "@jdurand",
         "avatar": "jessica.jpeg"
     },
     {
-        "user": "Benjamin",
+        "name": "Benjamin",
+        "username": "@bmercier",
         "avatar": "benjamin.jpeg"
     },
     {
-        "user": "Sophia",
+        "name": "Sophia",
+        "username": "@sbolkvadze",
         "avatar": "sophia.jpeg"
     },
     {
-        "user": "Oliver",
+        "name": "Oliver",
+        "username": "@obaker",
         "avatar": "oliver.jpeg"
     },
     {
-        "user": "Amelia",
+        "name": "Amelia",
+        "username": "@akritikos",
         "avatar": "amelia.jpeg"
     },
     {
-        "user": "Camila",
+        "name": "Camila",
+        "username": "@cgramhon",
         "avatar": "camila.jpeg"
     },
     {
-        "user": "Lucas",
+        "name": "Lucas",
+        "username": "@lkovacs",
         "avatar": "lucas.jpeg"
     },
     {
-        "user": "Natalie",
+        "name": "Natalie",
+        "username": "@nhansendottir",
         "avatar": "natalie.jpeg"
     }
 ]
