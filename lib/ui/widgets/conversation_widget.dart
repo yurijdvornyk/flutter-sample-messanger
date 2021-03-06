@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:sample_messanger/model.dart';
 
 class ConversationWidget extends StatefulWidget {
@@ -120,14 +121,23 @@ class _State extends State<ConversationWidget> {
                   topRight: radius,
                   bottomLeft: radius,
                 ),
-          color: Colors.blueAccent,
+          gradient: LinearGradient(
+            begin: Alignment(-2.0, -1.0),
+            end: Alignment(2.0, 1.0),
+            colors: [
+              Theme.of(context).primaryColor,
+              isMessageFromOtherUser(message)
+                  ? Theme.of(context).primaryColor
+                  : Theme.of(context).accentColor
+            ],
+          ),
         ),
         padding: EdgeInsets.all(16.0),
         child: Container(
           child: Text(
             message.currentUser ?? message.otherUser ?? "",
+            style: TextStyle(color: Colors.white),
           ),
-          width: 100,
         ));
   }
 

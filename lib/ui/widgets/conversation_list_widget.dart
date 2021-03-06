@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:sample_messanger/model.dart';
 
 class ConversationListWidget extends StatelessWidget {
@@ -18,7 +19,15 @@ class ConversationListWidget extends StatelessWidget {
           itemCount: conversations?.length ?? 0,
           separatorBuilder: (context, position) => Container(
             height: 1.0,
-            color: Colors.black,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment(-1.0, 0),
+              end: Alignment(1.0, 0),
+              colors: [
+                Theme.of(context).primaryColor,
+                Theme.of(context).accentColor
+              ],
+            )),
           ),
           itemBuilder: (context, position) => ListTile(
             contentPadding: EdgeInsets.all(16.0),

@@ -31,8 +31,6 @@ class ApiProvider implements IApiProvider {
 
   ApiProvider._();
 
-  void Function(List<Conversation>)? onConversationsUpdated;
-
   @override
   Future<List<Conversation>> loadConversations(BuildContext context) async {
     await Future.delayed(Duration(milliseconds: 200));

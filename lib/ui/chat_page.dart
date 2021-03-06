@@ -32,6 +32,7 @@ class _State extends BasePageState<ChatPage> {
   @override
   buildPhoneState(BuildContext context) => Scaffold(
         body: SafeArea(
+          top: false,
           child: ConversationWidget(
             widget.conversation,
             conversationMessages,
