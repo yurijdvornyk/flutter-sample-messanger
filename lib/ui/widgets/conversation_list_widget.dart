@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:sample_messanger/model.dart';
 
-class ConversationListWidget extends StatelessWidget {
+class ConversationListWidget extends StatefulWidget {
   final List<Conversation>? conversations;
   final void Function(Conversation item) onItemSelected;
 
@@ -13,10 +12,17 @@ class ConversationListWidget extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => conversations == null
+  State<StatefulWidget> createState() => _State();
+}
+
+class _State extends State<ConversationListWidget> {
+  Conversation? _selectedConversation;
+
+  @override
+  Widget build(BuildContext context) => widget.conversations == null
       ? Center(child: CircularProgressIndicator())
       : ListView.separated(
-          itemCount: conversations?.length ?? 0,
+          itemCount: widget.conversations?.length ?? 0,
           separatorBuilder: (context, position) => Container(
             height: 1.0,
             decoration: BoxDecoration(
@@ -35,13 +41,18 @@ class ConversationListWidget extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               child: AspectRatio(
                   child: Image.asset(
-                    "assets/images/${conversations![position].avatar}",
+                    "assets/images/${widget.conversations![position].avatar}",
                   ),
                   aspectRatio: 1),
             ),
-            title: Text(conversations![position].name),
-            subtitle: Text(conversations![position].username),
-            onTap: () => onItemSelected(conversations![position]),
+            title: Text(widget.conversations![position].name),
+            subtitle: Text(widget.conversations![position].username),
+            selected: widget.conversations![position] == _selectedConversation,
+            selectedTileColor: Theme.of(context).primaryColor,
+            onTap: () => setState(() {
+              _selectedConversation = widget.conversations![position];
+              widget.onItemSelected(_selectedConversation!);
+            }),
           ),
         );
 }
