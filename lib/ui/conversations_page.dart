@@ -92,14 +92,14 @@ class _State extends AdaptivePageState<ConversationsPage> {
           apiProvider.unsubscribe(selectedConversation);
         }
         selectedConversation = conversation;
-        apiProvider.subscribe(selectedConversation, (messages) {
+        apiProvider.subscribe(selectedConversation!, (messages) {
           setState(() {
             conversationMessages = messages;
           });
         });
         conversationMessages = null;
       }
-      apiProvider.loadConversation(selectedConversation);
+      apiProvider.loadConversation(selectedConversation!);
     });
   }
 
