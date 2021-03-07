@@ -3,14 +3,14 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:sample_messanger/ui/conversations_page.dart';
 
-import 'device_type_utils.dart';
+import 'device_type_util.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(MessangerApp());
 }
 
-class MyApp extends StatelessWidget {
+class MessangerApp extends StatelessWidget {
   Brightness? get _brightness =>
       SchedulerBinding.instance?.window.platformBrightness;
 
