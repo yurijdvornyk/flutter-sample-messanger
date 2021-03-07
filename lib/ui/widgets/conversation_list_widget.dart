@@ -36,8 +36,18 @@ class _State extends State<ConversationListWidget> {
               child: Image.asset("assets/images/${conversation.avatar}"),
               aspectRatio: 1),
         ),
-        title: Text(conversation.name),
-        subtitle: Text(conversation.username),
+        title: Text(
+          conversation.name,
+          style: conversation == _selectedConversation
+              ? TextStyle(color: Colors.white)
+              : null,
+        ),
+        subtitle: Text(
+          conversation.username,
+          style: conversation == _selectedConversation
+              ? TextStyle(color: Colors.white)
+              : null,
+        ),
         selected: conversation == _selectedConversation,
         selectedTileColor: Theme.of(context).primaryColor,
         onTap: () => setState(() {
