@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample_messanger/device_type_utils.dart';
 
-abstract class BasePageState<W extends StatefulWidget> extends State<W> {
+abstract class AdaptivePageState<W extends StatefulWidget> extends State<W> {
   Widget buildPhoneState(BuildContext context) => Container();
 
   Widget buildTabletState(BuildContext context) => Container();

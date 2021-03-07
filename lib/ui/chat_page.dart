@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample_messanger/api_provider.dart';
-import 'package:sample_messanger/ui/base_page_state.dart';
+import 'package:sample_messanger/ui/adaptive_page_state.dart';
 import 'package:sample_messanger/model.dart';
 import 'package:sample_messanger/ui/widgets/conversation_widget.dart';
 
@@ -13,7 +13,7 @@ class ChatPage extends StatefulWidget {
   State<StatefulWidget> createState() => _State();
 }
 
-class _State extends BasePageState<ChatPage> {
+class _State extends AdaptivePageState<ChatPage> {
   final apiProvider = ApiProvider.instance;
 
   List<Message>? conversationMessages;

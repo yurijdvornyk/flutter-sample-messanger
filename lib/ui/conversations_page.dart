@@ -5,14 +5,14 @@ import 'package:sample_messanger/model.dart';
 import 'package:sample_messanger/ui/widgets/conversation_list_widget.dart';
 import 'package:sample_messanger/ui/widgets/conversation_widget.dart';
 
-import 'base_page_state.dart';
+import 'adaptive_page_state.dart';
 
 class ConversationsPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _State();
 }
 
-class _State extends BasePageState<ConversationsPage> {
+class _State extends AdaptivePageState<ConversationsPage> {
   final apiProvider = ApiProvider.instance;
 
   List<Conversation>? conversations;
