@@ -55,7 +55,7 @@ class _State extends State<ConversationWidget> {
                 ? buildMessageList()
                 : buildEmptyArea(),
           ),
-          buildMessageForm(),
+          buildSendForm(),
         ],
       );
 
@@ -68,7 +68,7 @@ class _State extends State<ConversationWidget> {
             size: 128.0,
           ),
           SizedBox(height: 16.0),
-          Text('Start conversation by saying "Hello"!'),
+          Text('Start conversation by saying "Hello"'),
           Expanded(child: Container()),
         ],
       );
@@ -98,7 +98,7 @@ class _State extends State<ConversationWidget> {
         SizedBox(width: 4)
       ]);
     }
-    content.add(Expanded(flex: 4, child: createMessageBubble(message)));
+    content.add(Expanded(flex: 4, child: buildMessageBubble(message)));
     if (isMessageFromOtherUser(message)) {
       content.add(Expanded(flex: 1, child: Container()));
     } else {
@@ -112,32 +112,34 @@ class _State extends State<ConversationWidget> {
         children: content);
   }
 
-  Widget createMessageBubble(Message message) {
-    final radius = Radius.circular(16.0);
+  Widget buildMessageBubble(Message message) {
+    final bubbleRadius = Radius.circular(16.0);
     return Container(
       decoration: BoxDecoration(
-        borderRadius: isMessageFromOtherUser(message)
-            ? BorderRadius.only(
-                topLeft: radius,
-                topRight: radius,
-                bottomRight: radius,
-              )
-            : BorderRadius.only(
-                topLeft: radius,
-                topRight: radius,
-                bottomLeft: radius,
-              ),
-        gradient: LinearGradient(
-          begin: Alignment(-2.0, -1.0),
-          end: Alignment(2.0, 1.0),
-          colors: [
-            Theme.of(context).primaryColor,
-            isMessageFromOtherUser(message)
-                ? Theme.of(context).primaryColor
-                : Theme.of(context).accentColor
-          ],
-        ),
-      ),
+          borderRadius: isMessageFromOtherUser(message)
+              ? BorderRadius.only(
+                  topLeft: bubbleRadius,
+                  topRight: bubbleRadius,
+                  bottomRight: bubbleRadius,
+                )
+              : BorderRadius.only(
+                  topLeft: bubbleRadius,
+                  topRight: bubbleRadius,
+                  bottomLeft: bubbleRadius,
+                ),
+          gradient: isMessageFromOtherUser(message)
+              ? null
+              : LinearGradient(
+                  begin: Alignment(-2.0, -1.0),
+                  end: Alignment(2.0, 1.0),
+                  colors: [
+                    Theme.of(context).primaryColor,
+                    Theme.of(context).accentColor,
+                  ],
+                ),
+          color: isMessageFromOtherUser(message)
+              ? Theme.of(context).primaryColor
+              : null),
       padding: EdgeInsets.all(16.0),
       child: Container(
         child: Text(
@@ -148,7 +150,7 @@ class _State extends State<ConversationWidget> {
     );
   }
 
-  Widget buildMessageForm() => Padding(
+  Widget buildSendForm() => Padding(
         padding: EdgeInsets.all(16.0),
         child: Row(
           children: [
