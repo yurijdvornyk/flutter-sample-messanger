@@ -21,6 +21,7 @@ DeviceType get deviceType {
   }
 }
 
+// I took this check from here: https://pub.dev/packages/flutter_device_type
 bool get _isTablet {
   final pixelRatio = ui.window.devicePixelRatio;
   final width = ui.window.physicalSize.width;
