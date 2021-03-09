@@ -23,8 +23,7 @@ class MessangerApp extends StatelessWidget {
         initialData: null,
         builder: (BuildContext context, AsyncSnapshot<void> snapshot) =>
             snapshot.hasData
-                ? Container()
-                : MaterialApp(
+                ? MaterialApp(
                     title: 'Sample Messanger',
                     home: ConversationsPage(),
                     theme: ThemeData(
@@ -37,10 +36,11 @@ class MessangerApp extends StatelessWidget {
                           ? IconThemeData(color: _ACCENT_COLOR)
                           : IconThemeData(color: _PRIMARY_COLOR),
                     ),
-                  ),
+                  )
+                : Container(),
       );
 
-  Future<void> setOrientation() async {
+  Future<bool> setOrientation() async {
     final orientation = deviceType == DeviceType.PHONE
         ? Orientation.portrait
         : deviceType == DeviceType.TABLET
@@ -58,5 +58,6 @@ class MessangerApp extends StatelessWidget {
         DeviceOrientation.landscapeRight,
       ]);
     }
+    return true;
   }
 }
