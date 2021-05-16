@@ -71,7 +71,7 @@ class _State extends AdaptivePageState<ConversationsPage> {
                     );
                   },
                 ),
-              )
+              ),
             ],
           ),
         ),
