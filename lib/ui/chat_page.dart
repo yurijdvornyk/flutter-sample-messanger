@@ -14,8 +14,6 @@ class ChatPage extends StatefulWidget {
 }
 
 class _State extends AdaptivePageState<ChatPage> {
-  final apiProvider = ApiProvider.instance;
-
   List<Message>? conversationMessages;
 
   @override

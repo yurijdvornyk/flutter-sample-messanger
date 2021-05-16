@@ -13,8 +13,6 @@ class ConversationsPage extends StatefulWidget {
 }
 
 class _State extends AdaptivePageState<ConversationsPage> {
-  final apiProvider = ApiProvider.instance;
-
   List<Conversation>? conversations;
 
   Conversation? selectedConversation;

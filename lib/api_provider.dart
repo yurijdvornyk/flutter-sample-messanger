@@ -23,9 +23,9 @@ abstract class IApiProvider {
   void unsubscribe(Conversation? conversation);
 }
 
-class ApiProvider implements IApiProvider {
-  static final IApiProvider instance = ApiProvider._();
+final IApiProvider apiProvider = ApiProvider._();
 
+class ApiProvider implements IApiProvider {
   final Map<Conversation, List<Message>> _content = {};
   final Map<Conversation, void Function(List<Message>)> _listeners = {};
 
